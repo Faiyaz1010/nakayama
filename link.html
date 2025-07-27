@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Presentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111827;
+      color: white;
+      overflow: hidden;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      background: #1f2937;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .top-nav button {
+      background-color: #374151;
+      border: none;
+      padding: 8px 14px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .top-nav button.active-nav {
+      background-color: #3b82f6;
+    }
+
+    .slide {
+      display: none;
+      height: 100vh;
+      padding: 40px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .slide h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #3b82f6;
+    }
+
+    .project-box {
+      background-color: #1f2937;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      margin: 0 auto;
+      max-width: 700px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-box:hover {
+      transform: scale(1.02);
+    }
+
+    .project-box p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .project-box a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .project-box a:hover {
+      background-color: #60a5fa;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #3b82f6;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+      background-color: #0f172a;
+      color: #cbd5e1;
+    }
+
+    .thank-you {
+      font-size: 8rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #f472b6, #ec4899, #db2777, #be185d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: slideInThankYou 2s ease-out forwards;
+      user-select: none;
+      opacity: 0;
+      transform: translateY(100px);
+      margin: 0 auto;
+      max-width: 90vw;
+      line-height: 1;
+    }
+
+    @keyframes slideInThankYou {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Number Navigation -->
+  <div class="top-nav" id="navButtons"></div>
+
+  <!-- Slides (Projects) -->
+  <div class="slide">
+    <h2>Project 1: Develop schedule</h2>
+    <div class="project-box">
+      <p>This schedule helps me manage my project. I can plan my work, save time, and finish tasks step by step easily</p>
+      <a href="https://faiyaz1010.github.io/sche/">View Project</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Project 2: CSV Data Visualizer</h2>
+    <div class="project-box">
+      <p>I developed a system to upload CSV files and visualize the data using line and bar graphs.
+        It also supports mathematical operations such as calculating the sum and performing multiplication on selected data.</p>
+      <a href="https://faiyaz1010.github.io/grpah../">View Project</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Project 3: Real-time data monitoring dashboard Factory-1</h2>
+    <div class="project-box">
+      <p>I developed a real-time dashboard for Factory 1 to track power generation and consumption in kWh.</p>
+      <a href="https://niwmd.nglobal.jp/DX_DASHBOARD_MONITOR/co2/factory1.php">View Project</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Project 4: Real-time data monitoring dashboard Factory-2</h2>
+    <div class="project-box">
+      <p>I developed a real-time dashboard for Factory-2 to track power generation and consumption in kWh.</p>
+      <a href="https://niwmd.nglobal.jp/DX_DASHBOARD_MONITOR/co2/factory2.php">View Project</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Project 5: Co2 Emission Dashbaord</h2>
+    <div class="project-box">
+      <p>Nakayama Iron Works Headquarters NET Zero Calculation</p>
+      <a href="https://niwmd.nglobal.jp/DX_DASHBOARD_MONITOR/co2/my.php">View Project</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Project 6: Developed a Machine Monitoring System (MMS)</h2>
+    <div class="project-box">
+      <p>That allows real-time tracking of all running machines and the files they generate.
+         The system displays the number of files received, their sizes (in KB/MB), and shows both the first and last modified times.
+          It enables monitoring in real time as well as detailed analysis within minutes.
+</p>
+      <a href="https://nsupport.nglobal.jp/index.php">View Project</a>
+    </div>
+  </div>
+
+  <!-- <div class="slide">
+    <h2>Project 7: Hosting Setup</h2>
+    <div class="project-box">
+      <p>Guided deployment of static/dynamic websites using cheap domains and reliable shared hosting services.</p>
+      <a href="#">View Project</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Project 8: Real-time Data Graph</h2>
+    <div class="project-box">
+      <p>Displays live database updates every 5 seconds with animated Chart.js graphs and zoom options.</p>
+      <a href="#">View Project</a>
+    </div>
+  </div> -->
+
+  <div class="slide">
+    <h1 class="thank-you">THANK YOU 🙏</h1>
+  </div>
+
+  <!-- Bottom Navigation Buttons -->
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">⟵ Previous</button>
+    <button onclick="nextSlide()">Next ⟶</button>
+  </div>
+
+  <footer>&copy; 2025 Your Name | Project Presentation</footer>
+
+  <!-- Script -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const navContainer = document.getElementById('navButtons');
+    let current = parseInt(localStorage.getItem('lastSlide')) || 0;
+
+    // Create top number buttons dynamically
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.innerText = i + 1;
+      btn.onclick = () => {
+        current = i;
+        showSlide(current);
+      };
+      navContainer.appendChild(btn);
+    });
+
+    const navButtons = navContainer.querySelectorAll('button');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        navButtons[i].classList.remove('active-nav');
+        if (i === index) {
+          slide.classList.add('active');
+          navButtons[i].classList.add('active-nav');
+        }
+      });
+      localStorage.setItem('lastSlide', index);
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Initial call to show saved slide
+    showSlide(current);
+  </script>
+
+</body>
+</html>

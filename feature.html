@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feature Works</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111827;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #3b82f6;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .project-box {
+      background-color: #1f2937;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-box:hover {
+      transform: scale(1.01);
+    }
+
+    .project-box h2 {
+      font-size: 1.5rem;
+      color: #60a5fa;
+      margin-bottom: 10px;
+    }
+
+    .project-box p,
+    .project-box ul {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .project-box ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    .thank-you {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 4rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #f472b6, #ec4899, #db2777, #be185d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #374151;
+      color: white;
+      padding: 10px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #3b82f6;
+    }
+
+    .full-width {
+      max-width: 1200px;
+      margin: 0 auto 30px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Feature Works</h1>
+
+  <div class="project-box full-width">
+    <h2>Skillset & Objective</h2>
+    <p>
+      I specialize in front-end development, data monitoring dashboards, and efficient dataset analysis. 
+      These skills play a vital role in IoT-based solutions. My goal is to improve our machine data monitoring systems, 
+      making them more user-friendly, visually intuitive, and accessible on all devices.
+    </p>
+  </div>
+
+  <!-- Feature works displayed one by one below -->
+
+  <div class="project-box full-width">
+    <h2>✔️ Real-Time Factory Dashboards</h2>
+    <p>Enhanced dashboards for Factory-1 and Factory-2 to monitor real-time energy consumption and generation data.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ Carport-1 Monitoring</h2>
+    <p>Live tracking of solar, grid, and battery input/output (kWh and kW) performance for Carport-1 site.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ CO₂ Emission Visualization</h2>
+    <p>Designed dashboard views to show CO₂ emission trends and calculate environmental benefits from clean energy usage.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ Energy Savings Estimation</h2>
+    <p>Created calculation models to estimate energy cost savings for Factory-1 and Factory-2.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ Multi-Site Cloud Dashboard</h2>
+    <p>Implemented support for multi-site energy data monitoring with cloud-based remote access.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ User-Friendly Layout & App</h2>
+    <p>Refined UI for non-technical users and initiated mobile app development for monitoring dashboards.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ Hydropower Project Support</h2>
+    <p>Assisted with assembly, installation, and site testing for JR Kyushu MHPP and Asaji MHPP projects.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ Hydropower Maintenance</h2>
+    <p>Supported operational and maintenance work across hydropower facilities.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ Site Survey and AI Analysis</h2>
+    <p>Conducted new site surveys and used AI-based software tools for terrain and flow analysis.</p>
+  </div>
+
+  <div class="project-box full-width">
+    <h2>✔️ Hydro + Solar Integration</h2>
+    <p>Planned and supported a hybrid renewable energy system (hydropower + solar) demonstration at office site.</p>
+  </div>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>

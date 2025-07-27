@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hydro Power Site Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: #f1f5f9;
+      overflow: hidden;
+    }
+
+    header {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #38bdf8;
+      z-index: 10;
+    }
+
+    .slide-indicator {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 20;
+    }
+
+    .slide-indicator button {
+      background: #1e40af;
+      color: #fff;
+      border: none;
+      margin: 0 3px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .slide-indicator button.active {
+      background: #3b82f6;
+      font-weight: bold;
+    }
+
+    .slide {
+      display: none;
+      height: 100vh;
+      padding: 80px 40px 60px;
+      text-align: center;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeIn 0.6s ease;
+      overflow-y: auto;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .site-name {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0ea5e9;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 5px;
+    }
+
+    .details-box {
+      background-color: #1e293b;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+      margin-bottom: 25px;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .details-box h3 {
+      color: #3b82f6;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .details-box ul {
+      list-style: square;
+      padding-left: 20px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .photo-gallery img {
+      width: 250px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .nav-buttons button {
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #3b82f6;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.95rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 40px #3b82f6;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      z-index: 20;
+    }
+
+    .back-button button {
+      background: #1e40af;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .back-button button:hover {
+      background-color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+<header>Nakayama Hydro Power Site works & Visit</header>
+<div class="slide-indicator" id="indicator"></div>
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+  <div class="site-name">Site 1: Asaji MHPP Oita Prefecture</div>
+  <div class="details-box">
+    <h3>Works</h3>
+    <ul>
+      First assembled all the mechanical and electrical parts. After that, we tested the system without water.
+      We installed Propeller and Kaplan micro hydro turbines at Asaji, Oita. 
+      The guide vane was not opening fully, so we connected it directly to the actuator. 
+      I also learned how to monitor turbine data like water flow and speed using the dashboard. tracking of parameters such as water flow, turbine speed, and power output.
+    </ul>
+  </div>
+  <div class="photo-gallery">
+    <img src="images/asajias.jpg" alt="">
+    <img src="images/IMG-20250108-WA0044[1].jpg" alt="">
+    <img src="images/asaji4.jpg" alt="">
+    <img src="images/asaji7.jpg" alt="">
+    <img src="images/asaji4.jpg" alt="">
+    <img src="images/asajicheck.jpeg" alt="">
+    <img src="images/asaji6.jpg" alt="">
+    <img src="images/asajicon.jpg" alt="">
+    <img src="images/asaji8.jpg" alt="">
+    <img src="images/asaji9.jpeg" alt="">
+    <img src="images/asajias.jpg" alt="">
+    <img src="images/asaji installing.jpeg" alt="">
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+  <div class="site-name">Site 2: Taguchi MHPP</div>
+  <div class="details-box">
+    <h3>Works</h3>
+    <ul>
+      Runner Replacement , alignment check and check water flow,
+      pressure  Kirishima city Kagoshima prefecture.
+    </ul>
+  </div>
+  <div class="photo-gallery">
+    <img src="images/replace.jpg" alt="">
+    <img src="images/replace1.jpg" alt="">
+    <img src="images/replace5.jpg" alt="">
+    <img src="images/repl4.jpg" alt="">
+    <img src="images/new runner.jpg" alt="">
+    <img src="images/old runner.jpg" alt="">
+    <img src="images/my.jpg" alt="">
+    <img src="images/inlet.jpg" alt="">
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <div class="site-name">Site 3: Shiraito MHPP</div>
+  <div class="details-box">
+    <h3>Works</h3>
+    <ul>
+      I performed maintenance at the Shiraito site there was water leakage and a burnt control panel.
+      I carried out full inspection and cleaning, as there was no output initially. After completing the work, the output was restored, 
+      and I prepared a detailed report of the issue and the actions taken.
+    </ul>
+  </div>
+  <div class="photo-gallery">
+    <img src="images/taguchi.jpeg" alt="">
+    <img src="images/taguch3.jpg" alt="">
+    <img src="images/taguch2i.jpg" alt="">
+    <img src="images/burn.JPG" alt="">
+  </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+  <div class="site-name">Site 4: Installation Toriuzu MHP</div>
+  <div class="details-box">
+    <h3>Works</h3>
+    <ul>
+      Handled turbine, container, and generator  
+      installation using crane with proper alignment,  
+      pulley-belt setup, and without water/water testing.
+    </ul>
+  </div>
+  <div class="photo-gallery">
+    <img src="images/TORUZI1.jpg" alt="">
+    <img src="images/TORUZI2.jpg" alt="">
+    <img src="images/TORUZI3.jpg" alt="">
+  </div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+  <div class="site-name">Site 5: JR Kyushu MHPP</div>
+  <div class="details-box">
+    <h3>Works</h3>
+    <ul>
+      Worked on improving the guide vane assembly  
+      to ensure smoother operation and better performance.  
+      Made adjustments for proper alignment and secure fitting.
+    </ul>
+  </div>
+  <div class="photo-gallery">
+    <img src="https://via.placeholder.com/400x250?text=SCADA+Panel" alt="">
+    <img src="https://via.placeholder.com/400x250?text=Generator+Turbine" alt="">
+  </div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide">
+  <div class="site-name">Site visit: Visited Project Site and Explored Japan</div>
+  <div class="details-box">
+    <h3>Works</h3>
+    <ul>
+      I visited all the MHP (Micro Hydro Power) sites, 
+      observed and learned a lot from each one, and then explored different places in Japan
+    </ul>
+  </div>
+  <div class="photo-gallery">
+    <!-- Just showing a few for brevity -->
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/3.jpg" alt="">
+    <!-- Add remaining images up to 36.jpg -->
+  </div>
+</div>
+
+<!-- Overlay for image preview -->
+<div class="overlay" id="imgOverlay" onclick="hideOverlay()">
+  <img id="overlayImg" src="">
+</div>
+
+<!-- Navigation buttons -->
+<div class="nav-buttons">
+  <button onclick="prevSlide()">⟵ Previous</button>
+  <button onclick="nextSlide()">Next ⟶</button>
+</div>
+
+<footer>&copy; 2025 Nakayama | Hydro Power Field Projects</footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const indicator = document.getElementById("indicator");
+  let current = 0;
+
+  function renderIndicators() {
+    indicator.innerHTML = '';
+    slides.forEach((_, i) => {
+      const btn = document.createElement("button");
+      btn.textContent = i + 1;
+      btn.onclick = () => { current = i; showSlide(i); };
+      if (i === current) btn.classList.add("active");
+      indicator.appendChild(btn);
+    });
+  }
+
+  function updateIndicators() {
+    const buttons = document.querySelectorAll(".slide-indicator button");
+    buttons.forEach((btn, i) => {
+      btn.classList.toggle("active", i === current);
+    });
+  }
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+    updateIndicators();
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  function goToHome() {
+    current = 0;
+    showSlide(current);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+
+  const overlay = document.getElementById('imgOverlay');
+  const overlayImg = document.getElementById('overlayImg');
+
+  document.querySelectorAll('.photo-gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+      overlayImg.src = img.src;
+    });
+  });
+
+  function hideOverlay() {
+    overlay.style.display = 'none';
+  }
+
+  renderIndicators();
+  
+</script>
+
+</body>
+</html>

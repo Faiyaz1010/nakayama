@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nakayama Iron Works - Faizu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111827;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #3b82f6;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #fbbf24;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #22d3ee;
+      margin-bottom: 40px;
+    }
+
+    .link-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .box {
+      background-color: #1f2937;
+      padding: 30px 20px;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+    }
+
+    .box a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .box a:hover {
+      background-color: #60a5fa;
+    }
+
+    .back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #374151;
+  color: white;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #3b82f6;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Nakayama Iron Works</h1>
+  <h2>Mohammad Faiyaz</h2>
+  <h3>My Works Presentation (PPT)</h3>
+
+  <div class="link-boxes">
+    <div class="box">
+      <h4>📊Software Side Project</h4>
+      <p>Explore real-time monitoring & energy dashboards.</p>
+      <a href="link.html" target="_blank">View</a>
+    </div>
+
+    <div class="box">
+      <h4>MHP side project</h4>
+      <p>Track live machine activity and log data reports.</p>
+      <a href="myindex.html" target="_blank">View</a>
+    </div>
+
+    <div class="box">
+      <h4>📁Feature Works Plan</h4>
+      <p>Open full feature work PPT-style web page.</p>
+      <a href="feature.html" target="_blank">Open</a>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
+
+</body>
+</html>
