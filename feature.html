@@ -132,11 +132,6 @@
   </div>
 
   <div class="project-box full-width">
-    <h2>✔️ Multi-Site Cloud Dashboard</h2>
-    <p>Implemented support for multi-site energy data monitoring with cloud-based remote access.</p>
-  </div>
-
-  <div class="project-box full-width">
     <h2>✔️ User-Friendly Layout & App</h2>
     <p>Refined UI for non-technical users and initiated mobile app development for monitoring dashboards.</p>
   </div>
@@ -160,7 +155,42 @@
     <h2>✔️ Hydro + Solar Integration</h2>
     <p>Planned and supported a hybrid renewable energy system (hydropower + solar) demonstration at office site.</p>
   </div>
+  <div style="max-width:600px; margin:0 auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center;">
+    <h2 style="margin-bottom:10px;">✔️ Multi-Site Cloud Dashboard</h2>
+    <p style="margin-bottom:15px; color:#555;">targeted work</p>
+    <img id="thumbImg" src="replace.jpg" alt="Dashboard Image"
+         style="max-width:100%; height:auto; cursor:pointer; border-radius:5px; transition:0.3s;">
+  </div>
+
+  <!-- Modal -->
+  <div id="imgModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); z-index:999; text-align:center;">
+    <span id="closeBtn"
+          style="position:absolute; top:20px; right:30px; color:#fff; font-size:35px; font-weight:bold; cursor:pointer;">&times;</span>
+    <img id="modalImg" src="" alt="Zoomed Image"
+         style="margin-top:60px; max-width:90%; max-height:80%; border-radius:8px;">
+  </div>
+
   <script>
+    const modal = document.getElementById("imgModal");
+    const img = document.getElementById("thumbImg");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementById("closeBtn");
+
+    img.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+
+    closeBtn.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  
     function goBack() {
       window.history.back();
     }
