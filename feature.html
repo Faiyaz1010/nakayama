@@ -44,31 +44,9 @@
       margin-bottom: 10px;
     }
 
-    .project-box p,
-    .project-box ul {
+    .project-box p {
       font-size: 1rem;
       margin-bottom: 10px;
-    }
-
-    .project-box ul {
-      padding-left: 20px;
-      list-style-type: disc;
-    }
-
-    .thank-you {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 4rem;
-      font-weight: bold;
-      background: linear-gradient(90deg, #f472b6, #ec4899, #db2777, #be185d);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
 
     .back-btn {
@@ -94,6 +72,36 @@
       max-width: 1200px;
       margin: 0 auto 30px auto;
     }
+
+    /* Zoomed image style */
+    .zoomed {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      max-width: 90%;
+      max-height: 90%;
+      transform: translate(-50%, -50%) scale(1.2);
+      z-index: 1001;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: zoom-out;
+    }
+
+    .zoom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      display: none;
+    }
+
+    .zoom-overlay.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -107,16 +115,18 @@
     </p>
   </div>
 
-  <!-- 🔽 Image Block Added Here -->
+  <!-- 🔽 Clickable Image Block -->
   <div class="project-box full-width" style="background:#fff; color:#111827; text-align:center;">
-    <h2 style="color:#111827;">✔️ Multi-Site Cloud Dashboard</h2>
-    <p style="margin-bottom:15px;">Dashboard showing live monitoring of multiple industrial or energy sites from one platform.</p>
-    <img id="thumbImg" src="replace.jpg" alt="Dashboard Image"
-         style="max-width:100%; height:auto; cursor:pointer; border-radius:5px; transition:0.3s;">
+    <h2 style="color:#111827;">✔️ A-Global System</h2>
+    <p style="margin-bottom:15px;">This is a new system that will connect diffrent services and features under one platform,similar to N-Global.</p>
+    <img id="zoomImage" src="slack.jpg" alt="Dashboard Image"
+         style="max-width:100%; height:auto; border-radius:5px; transition:0.3s; cursor:zoom-in;">
   </div>
 
-  <!-- Feature works displayed one by one below -->
+  <!-- Overlay -->
+  <div id="zoomOverlay" class="zoom-overlay"></div>
 
+  <!-- Other Project Sections -->
   <div class="project-box full-width">
     <h2>✔️ Real-Time Factory Dashboards</h2>
     <p>Enhanced dashboards for Factory-1 and Factory-2 to monitor real-time energy consumption and generation data.</p>
@@ -156,38 +166,31 @@
     <p>Planned and supported a hybrid renewable energy system (hydropower + solar) demonstration at office site.</p>
   </div>
 
-  <!-- Modal -->
-  <div id="imgModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); z-index:999; text-align:center;">
-    <span id="closeBtn"
-          style="position:absolute; top:20px; right:30px; color:#fff; font-size:35px; font-weight:bold; cursor:pointer;">&times;</span>
-    <img id="modalImg" src="" alt="Zoomed Image"
-         style="margin-top:60px; max-width:90%; max-height:80%; border-radius:8px;">
-  </div>
-
   <script>
-    const modal = document.getElementById("imgModal");
-    const img = document.getElementById("thumbImg");
-    const modalImg = document.getElementById("modalImg");
-    const closeBtn = document.getElementById("closeBtn");
+    const img = document.getElementById("zoomImage");
+    const overlay = document.getElementById("zoomOverlay");
 
-    img.onclick = function () {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-    }
+    let isZoomed = false;
 
-    closeBtn.onclick = function () {
-      modal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
+    img.addEventListener("click", () => {
+      if (!isZoomed) {
+        img.classList.add("zoomed");
+        overlay.classList.add("active");
+        isZoomed = true;
       }
-    }
+    });
 
-    function goBack() {
-      window.history.back();
-    }
+    img.addEventListener("dblclick", () => {
+      img.classList.remove("zoomed");
+      overlay.classList.remove("active");
+      isZoomed = false;
+    });
+
+    overlay.addEventListener("click", () => {
+      img.classList.remove("zoomed");
+      overlay.classList.remove("active");
+      isZoomed = false;
+    });
   </script>
 </body>
 </html>
